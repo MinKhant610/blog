@@ -16,7 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('blogs');
 });
-
-Route :: get ('/blog', function () {
-    return view ('blog');
-});
+//                    wildcard          wildcard parm
+Route :: get ('/blogs/{blog}', function ($slug) {
+    $path = "../resources/blogs/$slug.html";
+    if(!file_exists($path)){
+        abort(404);
+    }
+    $blog = cache()->remember("posts.$slug", now()->addMinutes(2), function() use ($path){
+        var_dump('file get contents');
+        return file_get_contents($path);
+    });
+    
+    return view ('blog', [
+        'blog' => $blog
+    ]);
+})-> where('blog', '[A-Za-z\d\-_]+');
