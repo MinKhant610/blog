@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\File;
+
 class Blog
 {
     public static function find($slug){
@@ -14,4 +16,11 @@ class Blog
             return file_get_contents($path);
         });
     }
-} 
+
+    public static function all(){
+        $files = File::files(resource_path('blogs'));
+        return array_map(function($file){
+            return $file->getContents();
+        }, $files);
+    }
+}
