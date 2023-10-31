@@ -7,8 +7,15 @@
     <link rel = "stylesheet" href = "/css/app.css">
 </head>
 <body>
-    <?php foreach($blogs as $blog):?>
-    <?= $blog; ?>
+    <?php foreach($blogs as $blog): ?>
+    <h1>
+        <a href="blogs/<?= $blog->slug; ?>">
+            <?= $blog->title; ?>
+        </a>
+    </h1>
+    <div>
+        <p><?= $blog->intro; ?></p>
+    </div>
     <?php endforeach; ?>
 </body>
 </html>
