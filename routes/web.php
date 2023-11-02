@@ -21,6 +21,6 @@ Route::get('/', function () {
 //                    wildcard          wildcard parm
 Route :: get ('/blogs/{blog}', function ($slug) {
     return view ('blog', [
-        'blog' => Blog :: find($slug)
+        'blog' => Blog :: findOrFail($slug)
     ]);
 })-> where('blog', '[A-Za-z\d\-_]+');
