@@ -7,8 +7,8 @@
         <h1><a href="blogs/{{$blog->slug}}">
                 {{$blog->title}}
             </a>
-            <p><a href="">{{$blog->category->name}}</a></p>
         </h1>
+        <p><a href="/categories/{{$blog->category->slug}}">{{$blog->category->name}}</a></p>
         <div>
             <p>
                 published at -
