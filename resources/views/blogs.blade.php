@@ -6,7 +6,9 @@
     <div>
         <h1><a href="blogs/{{$blog->slug}}">
                 {{$blog->title}}
-            </a></h1>
+            </a>
+            <p><a href="">{{$blog->category->name}}</a></p>
+        </h1>
         <div>
             <p>
                 published at -

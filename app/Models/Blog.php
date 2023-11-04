@@ -10,7 +10,12 @@ class Blog extends Model
     use HasFactory;
     //when we use Blog::create([])
     protected $fillable =['title', 'intro', 'body'];
-    // protected $guarded = ['id']; 
+    // protected $guarded = ['id'];
+
+    public function category(){
+        //hasOne hasMany belongsTo belongsToMany
+        return $this->belongsTo(Category::class);
+    }
 }
 
 
