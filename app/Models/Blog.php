@@ -12,9 +12,15 @@ class Blog extends Model
     protected $fillable =['title', 'intro', 'body'];
     // protected $guarded = ['id'];
 
+    //lazy loading
+    protected $with = ['category', 'author'];
     public function category(){
         //hasOne hasMany belongsTo belongsToMany
         return $this->belongsTo(Category::class);
+    }
+
+    public function author(){
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
 

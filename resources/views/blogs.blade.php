@@ -8,7 +8,12 @@
                 {{$blog->title}}
             </a>
         </h1>
-        <p><a href="/categories/{{$blog->category->slug}}">{{$blog->category->name}}</a></p>
+        <h4>
+            <a href="/users/{{$blog->author->username}}">Author - {{$blog->author->username}}</a>
+        </h4>
+        <p>
+            <a href="/categories/{{$blog->category->slug}}">{{$blog->category->name}}</a>
+        </p>
         <div>
             <p>
                 published at -
