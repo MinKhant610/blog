@@ -24,7 +24,8 @@ Route::get('/', function () {
 //                    wildcard          wildcard parm
 Route :: get ('/blogs/{blog:slug}', function (Blog $blog) {
     return view ('blog', [
-        'blog' => $blog
+        'blog' => $blog,
+        'randomBlogs' => Blog::inRandomOrder()->take(3)->get()
     ]);
 })-> where('blog', '[A-Za-z\d\-_]+');
 
