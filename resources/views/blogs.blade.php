@@ -5,9 +5,7 @@
     <!-- blogs section -->
     {{--  currentCategory ?? null = $currentCategory ? currentCategory' : null --}}
     <x-blogs-section
-    :blogs="$blogs"
-    :categories="$categories"
-    :currentCategory="$currentCategory ?? null">
+    :blogs="$blogs">
     </x-blogs-section>
     <!-- subscribe new blogs -->
         <x-subscribe></x-subscribe>

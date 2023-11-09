@@ -10,14 +10,14 @@
       <h3 class="card-title">{{$blog->title}}</h3>
       <p class="fs-6 text-secondary">
 
-        <a href="/users/{{$blog->author->username}}">
+        <a href="/?username={{$blog->author->username}}">
             {{$blog->author->name}}
         </a>
 
         <span> - {{$blog->created_at->diffForHumans()}} </span>
       </p>
       <div class="tags my-3">
-        <a href="/categories/{{$blog->category->slug}}">
+        <a href="/?category={{$blog->category->slug}}">
             <span class="badge bg-primary">
                 {{$blog->category->name}}
             </span>
