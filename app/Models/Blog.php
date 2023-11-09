@@ -25,8 +25,10 @@ class Blog extends Model
 
     public function scopeFilter($query, $filter){
         $query->when($filter['search']??false, function ($query, $search){
-            $query->where('title', 'LIKE', '%'.$search.'%')
-                  ->orWhere('body', 'LIKE', '%'.$search.'%');
+            $query->where(function($query) use ($search){
+                $query->where('title', 'LIKE', '%'.$search.'%')
+                      ->orWhere('body', 'LIKE', '%'.$search.'%');
+            });
         });
     }
 }
