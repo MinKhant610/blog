@@ -7,11 +7,12 @@
                     <form method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Name</label>
+                            <label for="name" class="form-label">Name</label>
                             <input
+                            required
                             type="text"
                             class="form-control"
-                            id="exampleInputEmail1"
+                            id="name"
                             aria-describedby="emailHelp"
                             name="name"
                             value="{{old('name')}}"
@@ -21,10 +22,11 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Username</label>
+                            <label for="username" class="form-label">Username</label>
                             <input type="text"
+                            required
                             class="form-control"
-                            id="exampleInputEmail1"
+                            id="username"
                             aria-describedby="emailHelp"
                             name="username"
                             value="{{old('username')}}"
@@ -34,10 +36,11 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <label for="email" class="form-label">Email address</label>
                             <input type="email"
+                            required
                             class="form-control"
-                            id="exampleInputEmail1"
+                            id="email"
                             aria-describedby="emailHelp"
                             name="email"
                             value="{{old('email')}}"
@@ -47,11 +50,12 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <label for="passsword" class="form-label">Password</label>
                             <input
+                            required
                             type="password"
                             class="form-control"
-                            id="exampleInputPassword1"
+                            id="passsword"
                             name="password"
                             >
                             @error('password')
