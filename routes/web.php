@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [BlogController::class, 'index']);
 //                    wildcard          wildcard parm
@@ -11,3 +12,4 @@ Route :: get ('/blogs/{blog:slug}', [BlogController::class, 'show'])-> where('bl
 
 Route::get('/register',[AuthController::class, 'create']);
 Route::post('/register',[AuthController::class, 'store']);
+Route::post('/logout', [AuthController::class, 'logout']);
