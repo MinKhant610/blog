@@ -9,7 +9,7 @@ use Illuminate\Validation\Rule;
 class AuthController extends Controller
 {
     public function create(){
-        return view('register.create');
+        return view('auth.register');
     }
 
     public function store(){
@@ -29,5 +29,26 @@ class AuthController extends Controller
     public function logout(){
         auth()->logout();
         return redirect('/')->with('success', 'Good Bye');
+    }
+
+    public function login(){
+        return view('auth.login');
+    }
+
+    public function post_login(){
+        $formData = request()->validate([
+            'email' => ['required', 'email', 'max:255', Rule::exists('users', 'email')],
+            'password' => ['required', 'min:8', 'max:255']
+        ],[
+            'email.required' => 'We need your email address',
+            'password.min' => 'Password should be more than 8 character'
+        ]);
+        if (auth()->attempt($formData)){
+            return redirect('/')->with('success', 'Welcome back');
+        }else {
+            return redirect()->back()->withErrors([
+                'email' => 'User Credentials Wrong'
+            ]);
+        }
     }
 }
