@@ -30,7 +30,7 @@ class Blog extends Model
                       ->orWhere('body', 'LIKE', '%'.$search.'%');
             });
         });
-        
+
         $query->when($filter['category']??false, function ($query, $slug){
                                                 //this query is category query now
             $query->whereHas('category', function($query) use($slug){
@@ -43,6 +43,10 @@ class Blog extends Model
             });
         });
 
+    }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
     }
 }
 
