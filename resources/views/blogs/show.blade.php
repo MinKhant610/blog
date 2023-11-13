@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-
+    <x-comments></x-comments>
     <!-- subscribe new blogs -->
     <x-subscribe></x-subscribe>
 
