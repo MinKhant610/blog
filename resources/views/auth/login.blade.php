@@ -16,9 +16,8 @@
                             name="email"
                             value="{{old('email')}}"
                             >
-                            @error('email')
-                                <p class="text-danger">{{$message}}</p>
-                            @enderror
+                            <x-error name="email"></x-error>
+
                         </div>
                         <div class="mb-3">
                             <label for="passsword" class="form-label">Password</label>
@@ -29,9 +28,7 @@
                             id="passsword"
                             name="password"
                             >
-                            @error('password')
-                                <p class="text-danger">{{$message}}</p>
-                            @enderror
+                            <x-error name="password"></x-error>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
