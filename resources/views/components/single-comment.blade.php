@@ -1,9 +1,9 @@
 @props(['comment'])
-<div class="card d-flex p-3 my-3 shadow-sm">
+<x-card-wrapper>
     <div class="d-flex">
         <div>
             <img
-                src="https://i.pravatar.cc/300"
+                src={{$comment->author->avator}}
                 width="50"
                 height="50"
                 class="rounded-circle"
@@ -18,4 +18,4 @@
     <p class="mt-1">
         {{$comment->body}}
     </p>
-</div>
+</x-card-wrapper>
