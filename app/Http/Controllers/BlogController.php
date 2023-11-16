@@ -23,4 +23,10 @@ class BlogController extends Controller
         ]);
     }
 
+    //for admin
+    public function create(){
+        
+        return view('blogs.create');
+    }
+
 }
