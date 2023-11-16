@@ -52,5 +52,13 @@ class Blog extends Model
         //(User::class, 'blog_user') blog_user => table name
         // but we follow naming conversion so don't need second parm
     }
+
+    public function unSubscribe(){
+        $this->subscribers()->detach(auth()->id());
+    }
+
+    public function subscribe(){
+        $this->subscribers()->attach(auth()->id());
+    }
 }
 
