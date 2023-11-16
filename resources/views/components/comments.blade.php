@@ -5,5 +5,6 @@
         @foreach ($comments as $comment)
         <x-single-comment :comment="$comment"></x-single-comment>
         @endforeach
+        {{$comments->links()}}
     </div>
 </section>

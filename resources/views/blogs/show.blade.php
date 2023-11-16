@@ -23,7 +23,13 @@
                     </span>
                 </a>
             </div>
-            <div class="text-secondary"> {{$blog->created_at->diffForHumans()}} </div>
+            <div class="text-secondary"> {{$blog->created_at->diffForHumans()}}
+            </div>
+            <div class="text-secondary">
+                <button class="btn btn-warning">
+                    subscribe
+                </button>
+            </div>
           </div>
           <p class="lh-md mt-3">
             {{$blog->body}}
@@ -45,12 +51,8 @@
     </section>
 
     @if ($blog->comments->count())
-    <x-comments :comments="$blog->comments"></x-comments>
+    <x-comments :comments="$blog->comments()->latest()->paginate(3)"></x-comments>
     @endif
-    <!-- subscribe new blogs -->
-    <x-subscribe></x-subscribe>
-
-    <!-- subscribe new blogs -->
     <x-blogs-you-may-like :randomBlogs="$randomBlogs"></x-blogs-you-may-like>
 
 </x-layout>

@@ -45,6 +45,12 @@ class Blog extends Model
     public function comments(){
         return $this->hasMany(Comment::class);
     }
-}
 
+    public function subscribers(){
+        //many to many relationship
+        return $this->belongsToMany(User::class);
+        //(User::class, 'blog_user') blog_user => table name
+        // but we follow naming conversion so don't need second parm
+    }
+}
 
