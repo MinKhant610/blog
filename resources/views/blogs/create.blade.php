@@ -4,7 +4,10 @@
     </h3>
     <div class="col-md-8 mx-auto">
         <x-card-wrapper>
-            <form action="/admin/blogs/store" method="POST">
+            <form action="/admin/blogs/store"
+            method="POST"
+            enctype="multipart/form-data"
+            >
                 @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
@@ -45,6 +48,11 @@
                         {{old('body')}}
                     </textarea>
                     <x-error name="body"></x-error>
+                </div>
+                <div class="mb-3">
+                    <label for="thumbnail" class="form-label">ThumbNail</label>
+                    <input type="file" name="thumbnail" id="thumbnail" class="form-control" accept="image/*">
+                    <x-error name="thumbnail"></x-error>
                 </div>
                 <div>
                     <label for="category" class="form-label">Categories</label>
