@@ -12,7 +12,7 @@
           </p>
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
             <a
-              href="#subscribe"
+              href="/register"
               type="button"
               class="btn btn-primary btn-lg px-4 gap-3"
             >

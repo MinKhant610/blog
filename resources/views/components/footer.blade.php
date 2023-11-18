@@ -8,7 +8,7 @@
           <a href="#blogs" class="nav-link px-2">Blogs</a>
         </li>
         <li class="nav-item">
-          <a href="/login" class="nav-link px-2">Subscribe us</a>
+          <a href="/register" class="nav-link px-2">Subscribe us</a>
         </li>
       </ul>
       <p class="text-center">&copy; 2021 Blogs By creativecoder, Inc</p>
