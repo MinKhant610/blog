@@ -2,13 +2,13 @@
     <!-- single blog section -->
     <div class="container">
       <div class="row">
-        <div class="col-md-6 mx-auto text-center">
+        <div class="col-md-6 mx-auto text-center showtag">
           <img
             src="/storage/{{$blog->thumbnail}}"
             class="card-img-top"
             alt="..."
+            style="padding: 20px"
           />
-          <h3 class="my-3"> {{$blog->title}} </h3>
           <div>
             <div>
                 Author -
@@ -38,6 +38,7 @@
                 </form>
             </div>
           </div>
+          <h3 class="my-3"> {{$blog->title}} </h3>
           <p class="lh-md mt-3">
             {!!$blog->body!!}
           </p>
