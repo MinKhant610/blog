@@ -4,6 +4,9 @@
       <div class="d-flex">
         <a href="/#blogs" class="nav-link">Blogs</a>
         @auth
+        @can('admin')
+        <a href="/admin/blogs" class="nav-link">Dashboard</a>
+        @endcan
         <img
         src="{{auth()->user()->avator}}"
         alt=""

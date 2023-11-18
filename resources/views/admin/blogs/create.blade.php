@@ -1,6 +1,6 @@
 <x-admin.admin-layout>
     <h3 class="my-3 text-center">
-        Blog cretate form
+        Blog create form
     </h3>
     <x-card-wrapper>
         <form action="/admin/blogs/store"
