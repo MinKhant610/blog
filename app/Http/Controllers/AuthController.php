@@ -43,8 +43,13 @@ class AuthController extends Controller
             'email.required' => 'We need your email address',
             'password.min' => 'Password should be more than 8 character'
         ]);
+
         if (auth()->attempt($formData)){
-            return redirect('/')->with('success', 'Welcome back');
+            if(auth()->user()->is_admin){
+                return redirect('/admin/blogs');
+            }else{
+                return redirect('/')->with('success', 'Welcome back');
+            }
         }else {
             return redirect()->back()->withErrors([
                 'email' => 'User Credentials Wrong'
